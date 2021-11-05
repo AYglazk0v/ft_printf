@@ -14,7 +14,7 @@ typedef struct s_mix_tf
 {
 	size_t	pos_end;
 	int		m_flags[5];
-	int		m_types[8];
+	int		m_types[9];
 	int		dot;
 	int		status;
 	va_list	vl;

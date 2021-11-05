@@ -6,10 +6,12 @@ int	ft_pf_isdigit(char c)
 		return (1);
 	return (0);
 }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 int	ft_chek_type(t_mix_tf *mix)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (i < 9)
 	{
 		if (mix->m_types[i] != 0)
@@ -19,7 +21,7 @@ int	ft_chek_type(t_mix_tf *mix)
 	return (0);
 }
 
-void ft_porcess_mix(t_mix_tf *mix)
+void	ft_porcess_mix(t_mix_tf *mix)
 {
 	int	type;
 
@@ -33,7 +35,7 @@ void ft_porcess_mix(t_mix_tf *mix)
 	else if (type == 3 || type == 4 || type == 5)
 		ft_solve_diu(mix);
 	else if (type == 6 || type == 7)
-		ft_solve_xx(mix);	
+		ft_solve_xx(mix);
 	else if (type == 8)
 		ft_solve_percent(mix);
 }

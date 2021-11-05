@@ -13,17 +13,17 @@ int	ft_pf_strlen(const char	*s)
 char	*ft_create_str(size_t size)
 {
 	char	*new;
-    size_t  len;
+	size_t	len;
 
-    len = size + 1;
+	len = size + 1;
 	new = (char *)malloc(sizeof(char) * len);
-    if (!new)
-        return (NULL);
-    while (len-- > 0)
-    {
-        *new = '\0';
-        new++;
-    }
+	if (!new)
+		return (NULL);
+	while (len-- > 0)
+	{
+		*new = '\0';
+		new++;
+	}
 	return (new);
 }
 
@@ -48,7 +48,7 @@ char	*ft_pf_strncpy(char *dst, const char *src, size_t len)
 	i = -1;
 	while ((src[++i]) && i < len)
 		dst[i] = src[i];
-    while (i < len)
+	while (i < len)
 		dst[i++] = '\0';
 	return (dst);
 }

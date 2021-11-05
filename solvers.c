@@ -4,13 +4,13 @@ void	ft_solve_char(t_mix_tf *mix)
 {
 	char	ch;
 
-    mix->width++;
+	mix->width++;
 	if (mix->m_flags[1] == 1)
 	{
 		ch = ' ';
 		ft_pf_putchr(va_arg(mix->vl, char));
 		if (mix->width > 1)
-			while(--mix->width > 1)
+			while (--mix->width > 1)
 				ft_pf_putchr(ch);
 	}
 	else if (mix->m_flags[1] == 0)
@@ -19,8 +19,8 @@ void	ft_solve_char(t_mix_tf *mix)
 			ch = '0';
 		else
 			ch = ' ';
-		if (mix->width > 1);
-			while(--mix->width > 1)
+		if (mix->width > 1)
+			while (--mix->width > 1)
 				ft_pf_putchr(ch);
 		ft_pf_putchr(va_arg(mix->vl, char));
 	}
@@ -28,18 +28,18 @@ void	ft_solve_char(t_mix_tf *mix)
 
 void	ft_solve_str_continue(t_mix_tf *mix, char *str)
 {
-    mix->width++;
+	mix->width++;
 	if (mix->m_flags[1] == 1)
 	{
 		ft_pf_putstr(str);
 		if (mix->width > ft_pf_strlen(str))
-			while(--mix->width > ft_pf_strlen(str))
+			while (--mix->width > ft_pf_strlen(str))
 				ft_pf_putchr(' ');
 	}
 	else
 	{
 		if (mix->width > ft_pf_strlen(str))
-			while(--mix->width > ft_pf_strlen(str))
+			while (--mix->width > ft_pf_strlen(str))
 				ft_pf_putchr(' ');
 		ft_pf_putstr(str);
 	}
@@ -59,7 +59,7 @@ void	ft_solve_str(t_mix_tf *mix)
 		str = ft_create_str(ft_pf_strlen(tmp));
 		str = ft_pf_strcpy(str, tmp);
 	}
-	else 
+	else
 	{
 		str = ft_pf_create_str(mix->dimension);
 		str = ft_pf_strncpy(str, tmp, mix->dimension);
@@ -67,26 +67,25 @@ void	ft_solve_str(t_mix_tf *mix)
 	ft_solve_str_continue(mix, str);
 }
 
-void    ft_solve_point(t_mix_tf mix)
+void	ft_solve_point(t_mix_tf mix)
 {
-
 }
 
-void    ft_solve_percent(t_mix_tf *mix)
+void	ft_solve_percent(t_mix_tf *mix)
 {
-    mix->width++;
-    if (mix->m_flags[1] == 1)
-    {
-        ft_pf_putchr('%');
-        if (mix->m_flags[3] != 1)
-            while (--mix->width > 1)
-                ft_pf_putchr(' ');
-    }
-    else
-    {
-        if (mix->m_flags[3] == 1)
-           while (--mix->width > 1)
-                ft_pf_putchr('0');
-        ft_pf_putchr('%');
-    }
+	mix->width++;
+	if (mix->m_flags[1] == 1)
+	{
+		ft_pf_putchr('%');
+		if (mix->m_flags[3] != 1)
+			while (--mix->width > 1)
+				ft_pf_putchr(' ');
+	}
+	else
+	{
+		if (mix->m_flags[3] == 1)
+			while (--mix->width > 1)
+				ft_pf_putchr('0');
+		ft_pf_putchr('%');
+	}
 }

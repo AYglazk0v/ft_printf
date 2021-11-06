@@ -30,7 +30,7 @@ void	ft_solve_str(t_mix_tf *mix)
 		tmp = "(null)";
 	if (mix->dimension == 0)
 	{
-		str = ft_create_str(ft_pf_strlen(tmp));
+		str = ft_pf_create_str(ft_pf_strlen(tmp));
 		str = ft_pf_strcpy(str, tmp);
 	}
 	else

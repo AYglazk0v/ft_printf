@@ -8,7 +8,7 @@ static	int	ft_chek_type(t_mix_tf *mix)
 	while (i < 9)
 	{
 		if (mix->m_types[i] != 0)
-			retrun (0);
+			return (0);
 		i++;
 	}
 	return (0);

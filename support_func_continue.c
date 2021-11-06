@@ -23,3 +23,38 @@ size_t	ft_invalid_status(t_mix_tf *mix, size_t pos_start, const char *src)
 		ft_pf_putchr(src[pos_start++]);
 	return (pos_start);
 }
+
+int	ft_len_int_base(long long num, long long s_base)
+{
+	int	l;
+
+	l = 0;
+	if (num < 0)
+	{
+		if (s_base == 10)
+			l++;
+		num *= -1;
+	}
+	while (num >= s_base)
+	{
+		num /= s_base;
+		l++;
+	}
+	return (l);
+}
+
+void	ft_convert2str(char *str, long long int num, int size, char *base)
+{
+	int	s_base;
+
+	s_base = ft_pf_strlen(base);
+	if (num < 0)
+	{
+		if (base == BASE10)
+			str[0] = '-';
+		num = ~num + 1;
+	}
+	if (num >= s_base)
+		ft_convert2str(str, num / s_base, size - 1, base);
+	str[size] = base[num % 16];
+}

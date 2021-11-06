@@ -17,24 +17,6 @@ void	ft_pf_putchr(char c)
 	ft_cnt_print(1);
 }
 
-void	ft_pf_putnbr(void *src, char *base, long long int s_base, int len)
-{	
-	long long int	num;
-
-	num = 0;
-	num = (long long int)src;
-	if (num < 0)
-	{
-		if (s_base == 10)
-			ft_pf_putchr('-');
-		num = ~num + 1;
-	}
-	len--;
-	if (num > 10 && len >= 0)
-		ft_pf_putnbr((void *)(num / s_base), base, s_base, len);
-	ft_pf_putchr(base[num % s_base]);
-}
-
 void	ft_pf_putstr(char *s)
 {
 	if (!s)

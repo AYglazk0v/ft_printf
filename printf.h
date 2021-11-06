@@ -35,6 +35,8 @@ char	*ft_pf_strncpy(char *dst, const char *src, size_t len);
 //supp_continue
 size_t	ft_invalid_status(t_mix_tf *mix, size_t pos_start, const char *src);
 void	ft_clean_mix(t_mix_tf *mix);
+int		ft_len_int_base(long long num, long long s_base);
+void	ft_convert2str(char *str, long long int num, int size, char *base);
 
 void	ft_solve_char(t_mix_tf *mix);
 void	ft_solve_str(t_mix_tf *mix);
@@ -42,6 +44,5 @@ void	ft_solve_percent(t_mix_tf *mix);
 
 void	ft_porcess_mix(t_mix_tf *mix);
 void	ft_pf_putchr(char c);
-void	ft_pf_putnbr(void *src, char *base, long long int s_base, int len);
 void	ft_pf_putstr(char *s);
 #endif

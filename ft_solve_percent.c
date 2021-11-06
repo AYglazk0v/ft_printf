@@ -18,4 +18,3 @@ void	ft_solve_percent(t_mix_tf *mix)
 		ft_pf_putchr('%');
 	}
 }
-

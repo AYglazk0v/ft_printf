@@ -1,13 +1,6 @@
 #include "printf.h"
 
-int	ft_pf_isdigit(char c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-
-int	ft_chek_type(t_mix_tf *mix)
+static	int	ft_chek_type(t_mix_tf *mix)
 {
 	int	i;
 
@@ -40,7 +33,7 @@ void	ft_porcess_mix(t_mix_tf *mix)
 		ft_solve_percent(mix);
 }
 
-void	ft_get_param(t_mix_tf *mix, const char *src, size_t	start)
+static void	ft_get_param(t_mix_tf *mix, const char *src, size_t	start)
 {
 	mix->pos_end = start;
 	while (ft_pf_strchr(FLAGS, src[mix->pos_end]))
@@ -61,52 +54,28 @@ void	ft_get_param(t_mix_tf *mix, const char *src, size_t	start)
 	}
 }
 
-void	ft_clean_mix(t_mix_tf *mix)
-{
-	int	l;
-
-	l = 0;
-	mix->pos_end = 0;
-	mix->dot = 0;
-	mix->status = 0;
-	mix->width = 0;
-	mix->dimension = 0;
-	while (l++ < 5)
-		mix->m_flags[l] = 0;
-	l = 0;
-	while (l++ < 8)
-		mix->m_types[l] = 0;
-}
-
 int	ft_printf(const char *src, ...)
 {
 	size_t		pos_start;
 	t_mix_tf	*mix;
 
 	mix = (t_mix_tf *)malloc(sizeof(t_mix_tf));
-	if (!mix)
-		return (-1);
 	va_start(mix->vl, src);
 	ft_cnt_print(0);
 	pos_start = 0;
 	while (src[pos_start])
 	{
 		ft_clean_mix(mix);
-		if (src[pos_start++] == '%')
+		if (src[pos_start] == '%')
 		{
-			ft_get_param(mix, src, pos_start);
+			ft_get_param(mix, src, ++pos_start);
 			if (mix->status == 0)
-			{
-				pos_start--;
-				while (pos_start < mix->pos_end)
-					ft_pf_putchr(src[pos_start++]);
-			}
+				pos_start = ft_invalid_status(mix, --pos_start, src);
 			else
-			{
-				ft_clean_mix(mix);
-			}
-//////////////////////TO DO/////////////////////////
+				ft_porcess_mix(mix);
 		}
+		else
+			ft_pf_putchr(src[pos_start++]);
 	}
 	va_end(mix->vl);
 	free(mix);

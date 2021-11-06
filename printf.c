@@ -20,7 +20,7 @@ void	ft_porcess_mix(t_mix_tf *mix)
 
 	type = ft_chek_type(mix);
 	if (type == 0)
-		ft_solv_char(mix);
+		ft_solve_char(mix);
 	else if (type == 1)
 		ft_solve_str(mix);
 	else if (type == 2)

@@ -27,7 +27,7 @@ char	*ft_pf_strchr(char *string, char symbol);
 
 //support_func.c 
 int		ft_pf_isdigit(char c);
-char	*ft_create_str(size_t size);
+char	*ft_pf_create_str(size_t size);
 int		ft_pf_strlen(const char	*s);
 char	*ft_pf_strcpy(char *dst, const char *src);
 char	*ft_pf_strncpy(char *dst, const char *src, size_t len);
@@ -41,6 +41,9 @@ void	ft_convert2str(char *str, long long int num, int size, char *base);
 void	ft_solve_char(t_mix_tf *mix);
 void	ft_solve_str(t_mix_tf *mix);
 void	ft_solve_percent(t_mix_tf *mix);
+void	ft_solve_point(t_mix_tf *mix);
+void	ft_solve_diu(t_mix_tf *mix);
+void	ft_solve_xx(t_mix_tf *mix);
 
 void	ft_porcess_mix(t_mix_tf *mix);
 void	ft_pf_putchr(char c);

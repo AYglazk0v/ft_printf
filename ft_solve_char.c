@@ -8,7 +8,7 @@ void	ft_solve_char(t_mix_tf *mix)
 	if (mix->m_flags[1] == 1)
 	{
 		ch = ' ';
-		ft_pf_putchr(va_arg(mix->vl, char));
+		ft_pf_putchr(va_arg(mix->vl, int));
 		if (mix->width > 1)
 			while (--mix->width > 1)
 				ft_pf_putchr(ch);
@@ -22,6 +22,6 @@ void	ft_solve_char(t_mix_tf *mix)
 		if (mix->width > 1)
 			while (--mix->width > 1)
 				ft_pf_putchr(ch);
-		ft_pf_putchr(va_arg(mix->vl, char));
+		ft_pf_putchr(va_arg(mix->vl, int));
 	}
 }

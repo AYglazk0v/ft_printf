@@ -25,8 +25,10 @@ void	ft_porcess_mix(t_mix_tf *mix)
 		ft_solve_str(mix);
 	else if (type == 2)
 		ft_solve_point(mix);
-	else if (type == 3 || type == 4 || type == 5)
-		ft_solve_diu(mix);
+	else if (type == 3 || type == 4)
+		ft_solve_di(mix);
+	else if (type == 5)
+		ft_solve_u(mix);
 	else if (type == 6 || type == 7)
 		ft_solve_xx(mix);
 	else if (type == 8)

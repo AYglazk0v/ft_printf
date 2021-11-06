@@ -40,3 +40,24 @@ char	*ft_pf_strchr(char *string, char symbol)
 		return (string);
 	return (NULL);
 }
+
+char	*ft_pf_strdup(const char *str)
+{
+	char	*cpy;
+	int		i;
+	int		size;
+
+	i = 0;
+	size = 0;
+	size = ft_pf_strlen(str);
+	cpy = (char *)malloc(sizeof(char) * (size + 1));
+	if (cpy == NULL)
+		return ((void *)0);
+	while (size--)
+	{
+		cpy[i] = str[i];
+		i++;
+	}
+	cpy[i] = '\0';
+	return (cpy);
+}

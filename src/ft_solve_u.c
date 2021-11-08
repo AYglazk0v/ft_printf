@@ -2,16 +2,15 @@
 
 static char	*case_1(char *str, t_mix_tf *mix)
 {
-//    char    *tmp;
-//
+    char    *tmp;
+
 	if (mix->dimension > 0)
 	{
 		while (mix->dimension > ft_pf_strlen(str))
 		{
-			//tmp = ft_pf_strdup(str);
-			//free(str);
-			str = ft_pf_strjoin("0", str);
-			//free(tmp);
+			tmp = ft_pf_strdup(str);
+			free(str);
+			str = ft_pf_strjoin("0", tmp);
 		}
 	}
 	return (str);

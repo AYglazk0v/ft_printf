@@ -9,6 +9,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+#include <stdio.h>
 
 typedef struct s_mix_tf
 {
@@ -22,6 +23,7 @@ typedef struct s_mix_tf
 	int		dimension;
 }				t_mix_tf;
 
+int	ft_printf(const char *src, ...);
 //support_func.c 
 int		ft_pf_isdigit(char c);
 char	*ft_pf_create_str(size_t size);

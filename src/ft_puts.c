@@ -21,7 +21,7 @@ void	ft_pf_putstr(char *s)
 {
 	if (!s)
 		s = "(null)";
-	while (*s)
+	while (s && *s)
 	{
 		ft_pf_putchr(*s);
 		s++;

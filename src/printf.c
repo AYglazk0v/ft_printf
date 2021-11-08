@@ -8,7 +8,7 @@ static	int	ft_chek_type(t_mix_tf *mix)
 	while (i < 9)
 	{
 		if (mix->m_types[i] != 0)
-			return (0);
+			return (i);
 		i++;
 	}
 	return (0);
@@ -17,7 +17,7 @@ static	int	ft_chek_type(t_mix_tf *mix)
 static void	ft_porcess_mix(t_mix_tf *mix)
 {
 	int	type;
-
+	
 	type = ft_chek_type(mix);
 	if (type == 0)
 		ft_solve_char(mix);
@@ -68,13 +68,17 @@ int	ft_printf(const char *src, ...)
 	while (src[pos_start])
 	{
 		ft_clean_mix(mix);
+		printf("HM:%s\n", &src[pos_start]);
 		if (src[pos_start] == '%')
 		{
 			ft_get_param(mix, src, ++pos_start);
 			if (mix->status == 0)
 				pos_start = ft_invalid_status(mix, --pos_start, src);
 			else
+			{
 				ft_porcess_mix(mix);
+				pos_start = mix->pos_end + 1;
+			}
 		}
 		else
 			ft_pf_putchr(src[pos_start++]);

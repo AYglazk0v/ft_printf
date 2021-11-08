@@ -7,16 +7,15 @@ static void	ft_solve_str_continue(t_mix_tf *mix, char *str)
 	{
 		ft_pf_putstr(str);
 		mix->width -= ft_pf_strlen(str);
-		while (mix->width-- > 0)
+		while (--mix->width > 0)
 			ft_pf_putchr(' ');
 	}
 	else
 	{
-		while (mix->width-- > 0)
+		while (--mix->width > 0)
 			ft_pf_putchr(' ');
 		ft_pf_putstr(str);
 	}
-	free(str);
 }
 
 void	ft_solve_str(t_mix_tf *mix)
@@ -38,4 +37,5 @@ void	ft_solve_str(t_mix_tf *mix)
 		str = ft_pf_strncpy(str, tmp, mix->dimension);
 	}
 	ft_solve_str_continue(mix, str);
+	free(str);
 }

@@ -48,7 +48,7 @@ void	ft_convert2str(char *str, long long int num, int size, char *base)
 		num = ~num + 1;
 	if (num >= s_base)
 		ft_convert2str(str, num / s_base, size - 1, base);
-	str[size] = base[num % 16];
+	str[size] = base[num % s_base];
 }
 
 char	*ft_pf_strjoin(char *s1, char *s2)
@@ -74,7 +74,6 @@ char	*ft_pf_strjoin(char *s1, char *s2)
 	while (s2[j])
 		join[i++] = s2[j++];
 	join[i] = '\0';
-	free(s1);
 	free(s2);
 	return (join);
 }

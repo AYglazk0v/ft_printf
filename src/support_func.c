@@ -17,7 +17,7 @@ int	ft_pf_strlen(const char	*s)
 	return (n);
 }
 
-char	*ft_create_str(size_t size)
+char	*ft_pf_create_str(size_t size)
 {
 	char	*new;
 	size_t	len;
@@ -26,10 +26,10 @@ char	*ft_create_str(size_t size)
 	new = (char *)malloc(sizeof(char) * len);
 	if (!new)
 		return (NULL);
-	while (len-- > 0)
+	while (len > 0)
 	{
-		*new = '\0';
-		new++;
+		new[len] = '\0';
+		len--;
 	}
 	return (new);
 }

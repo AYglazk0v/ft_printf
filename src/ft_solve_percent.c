@@ -1,4 +1,4 @@
-#include "../inc/printf.h"
+#include "../inc/ft_printf.h"
 
 void	ft_solve_percent(t_mix_tf *mix)
 {

@@ -1,5 +1,5 @@
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 # define BASE10 "0123456789"
 # define BASE16 "0123456789ABCDEF"
 # define LBASE16 "0123456780abcdef"

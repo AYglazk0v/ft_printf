@@ -1,4 +1,4 @@
-#include "../inc/printf.h"
+#include "../inc/ft_printf.h"
 
 static void	ft_solve_str_continue(t_mix_tf *mix, char *str)
 {

@@ -1,4 +1,4 @@
-#include "../inc/printf.h"
+#include "../inc/ft_printf.h"
 
 int	ft_pf_isdigit(char c)
 {

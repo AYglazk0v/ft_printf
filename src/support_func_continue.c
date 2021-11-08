@@ -1,4 +1,4 @@
-#include "../inc/printf.h"
+#include "../inc/ft_printf.h"
 
 void	ft_clean_mix(t_mix_tf *mix)
 {

@@ -1,4 +1,4 @@
-#include "../inc/printf.h"
+#include "../inc/ft_printf.h"
 
 static	int	ft_chek_type(t_mix_tf *mix)
 {
@@ -68,7 +68,6 @@ int	ft_printf(const char *src, ...)
 	while (src[pos_start])
 	{
 		ft_clean_mix(mix);
-		printf("HM:%s\n", &src[pos_start]);
 		if (src[pos_start] == '%')
 		{
 			ft_get_param(mix, src, ++pos_start);

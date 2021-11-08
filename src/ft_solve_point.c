@@ -1,4 +1,4 @@
-#include "../inc/printf.h"
+#include "../inc/ft_printf.h"
 
 static void	case_1(t_mix_tf *mix)
 {

@@ -14,7 +14,7 @@ static	int	ft_chek_type(t_mix_tf *mix)
 	return (0);
 }
 
-void	ft_porcess_mix(t_mix_tf *mix)
+static void	ft_porcess_mix(t_mix_tf *mix)
 {
 	int	type;
 

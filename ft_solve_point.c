@@ -22,13 +22,15 @@ static void	case_2(t_mix_tf *mix, char *str)
 {
 	ft_pf_putstr("0x");
 	ft_pf_putstr(str);
-	while (mix->width-- > ft_pf_strlen(str) + 2)
+	mix->width -= ft_pf_strlen(str) + 2;
+	while (mix->width-- > 0)
 		ft_pf_putchr(' ');
 }
 
 static void	case_3(t_mix_tf *mix, char *str)
 {
-	while (mix->width-- > ft_pf_strlen(str) + 2)
+	mix->width -= ft_pf_strlen(str) + 2;
+	while (mix->width-- > 0)
 		ft_pf_putchr(' ');
 	ft_pf_putstr("0x");
 	ft_pf_putstr(str);

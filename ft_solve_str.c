@@ -6,15 +6,14 @@ static void	ft_solve_str_continue(t_mix_tf *mix, char *str)
 	if (mix->m_flags[1] == 1)
 	{
 		ft_pf_putstr(str);
-		if (mix->width > ft_pf_strlen(str))
-			while (--mix->width > ft_pf_strlen(str))
-				ft_pf_putchr(' ');
+		mix->width -= ft_pf_strlen(str);
+		while (mix->width-- > 0)
+			ft_pf_putchr(' ');
 	}
 	else
 	{
-		if (mix->width > ft_pf_strlen(str))
-			while (--mix->width > ft_pf_strlen(str))
-				ft_pf_putchr(' ');
+		while (mix->width-- > 0)
+			ft_pf_putchr(' ');
 		ft_pf_putstr(str);
 	}
 	free(str);

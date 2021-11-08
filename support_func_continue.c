@@ -30,11 +30,7 @@ int	ft_len_int_base(long long num, long long s_base)
 
 	l = 0;
 	if (num < 0)
-	{
-		if (s_base == 10)
-			l++;
-		num *= -1;
-	}
+		num = ~num + 1;
 	while (num >= s_base)
 	{
 		num /= s_base;
@@ -49,11 +45,7 @@ void	ft_convert2str(char *str, long long int num, int size, char *base)
 
 	s_base = ft_pf_strlen(base);
 	if (num < 0)
-	{
-		if (base == BASE10)
-			str[0] = '-';
 		num = ~num + 1;
-	}
 	if (num >= s_base)
 		ft_convert2str(str, num / s_base, size - 1, base);
 	str[size] = base[num % 16];
@@ -83,5 +75,6 @@ char	*ft_pf_strjoin(char *s1, char *s2)
 		join[i++] = s2[j++];
 	join[i] = '\0';
 	free(s1);
+	free(s2);
 	return (join);
 }

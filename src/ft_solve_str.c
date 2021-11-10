@@ -26,7 +26,7 @@ void	ft_solve_str(t_mix_tf *mix)
 	tmp = va_arg(mix->vl, char *);
 	if (tmp == NULL)
 		tmp = "(null)";
-	if (mix->dimension == 0)
+	if (mix->dimension == 0 && mix->dot == 0)
 	{
 		str = ft_pf_create_str(ft_pf_strlen(tmp));
 		str = ft_pf_strcpy(str, tmp);

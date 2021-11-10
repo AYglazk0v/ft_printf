@@ -13,6 +13,7 @@ static char	*case_1(char *str, t_mix_tf *mix)
 			str = ft_pf_strjoin("0", tmp);
 		}
 	}
+	ft_pf_putstr(str);
 	return (str);
 }
 
@@ -53,10 +54,10 @@ void	ft_solve_u(t_mix_tf *mix)
 	str = (char *)malloc(sizeof(char) * len_s + 2);
 	ft_convert2str(str, u_i, len_s, BASE10);
 	str[len_s + 1] = '\0';
-	if (mix->dimension == 0 && mix->dot && u_i == 0)
+	if (mix->dimension == 0 && mix->dot == 1 && u_i == 0)
 		while (mix->width-- > 0)
 			ft_pf_putchr(' ');
-	else if (mix->dimension > 0)
+	if (mix->dimension > 0)
 		str = case_1(str, mix);
 	else if (mix->width > 0 && mix->m_flags[1] == 1)
 		case_2(str, mix);

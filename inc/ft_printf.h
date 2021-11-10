@@ -2,14 +2,13 @@
 # define FT_PRINTF_H
 # define BASE10 "0123456789"
 # define BASE16 "0123456789ABCDEF"
-# define LBASE16 "0123456780abcdef"
+# define LBASE16 "0123456789abcdef"
 # define FLAGS "+-#0 "
 # define TYPES "cspiduxX%"
 
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
-#include <stdio.h>
 
 typedef struct s_mix_tf
 {
@@ -35,6 +34,7 @@ char	*ft_pf_strncpy(char *dst, const char *src, size_t len);
 size_t	ft_invalid_status(t_mix_tf *mix, size_t pos_start, const char *src);
 void	ft_clean_mix(t_mix_tf *mix);
 int		ft_len_int_base(long long num, long long s_base);
+
 void	ft_convert2str(char *str, long long int num, int size, char *base);
 char	*ft_pf_strjoin(char *s1, char *s2);
 

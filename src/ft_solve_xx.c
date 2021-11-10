@@ -1,9 +1,15 @@
 #include "../inc/ft_printf.h"
 
-static char	*case_1(char *str, t_mix_tf *mix)
+static char	*case_1(char *str, t_mix_tf *mix, unsigned int x)
 {
 	char	*tmp;
 
+	if (mix->m_flags[2] == 1 && x != 0 && mix->m_types[6])
+		ft_pf_putstr("0x");
+	if (mix->m_flags[2] == 1 && x != 0 && mix->m_types[7])
+		ft_pf_putstr("0X");
+	if (mix->m_flags[2] == 1)
+		mix->width -= 2;
 	if (mix->dimension > 0)
 	{
 		while (mix->dimension > ft_pf_strlen(str))
@@ -68,7 +74,7 @@ void	ft_solve_xx(t_mix_tf *mix)
 	if (mix->dimension > 0 && mix->dot == 1 && x == 0)
 		while (mix->width-- > 0)
 			ft_pf_putchr(' ');
-	str = case_1(str, mix);
+	str = case_1(str, mix, x);
 	if (mix->width > 0 && mix->m_flags[1] == 1)
 		case_2(str, mix, x);
 	else if (mix->width > 0 && mix->m_flags[1] == 0)

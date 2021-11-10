@@ -33,7 +33,7 @@ int	ft_len_int_base(long long num, long long s_base)
 		num = ~num + 1;
 	while (num >= s_base)
 	{
-		num /= s_base;
+		num = num / s_base;
 		l++;
 	}
 	return (l);
@@ -77,3 +77,4 @@ char	*ft_pf_strjoin(char *s1, char *s2)
 	free(s2);
 	return (join);
 }
+

@@ -10,6 +10,8 @@
 # include <stdlib.h>
 # include <stdarg.h>
 
+# include <stdio.h>
+
 typedef struct s_mix_tf
 {
 	size_t	pos_end;

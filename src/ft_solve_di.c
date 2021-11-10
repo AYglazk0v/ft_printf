@@ -35,6 +35,8 @@ static void	case_2(char *str, t_mix_tf *mix, int i)
 
 static void	case_3(char *str, t_mix_tf *mix, int i)
 {
+	if (i < 0)
+		mix->width--;
 	mix->width -= ft_pf_strlen(str);
 	while ((mix->width > 0 && mix->m_flags[3] == 0)
 		|| (mix->width > 0 && mix->m_flags[3] == 1 && mix->dimension > 0))
@@ -45,10 +47,7 @@ static void	case_3(char *str, t_mix_tf *mix, int i)
 	if (i >= 0 && mix->m_flags[0] == 1)
 		ft_pf_putchr('+');
 	else if (i < 0)
-	{
 		ft_pf_putchr('-');
-		mix->width--;
-	}
 	while (mix->width-- > 0 && mix->m_flags[3] == 1)
 		ft_pf_putchr('0');
 	ft_pf_putstr(str);

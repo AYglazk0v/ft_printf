@@ -36,11 +36,11 @@ static void	case_3(t_mix_tf *mix, char *str)
 	ft_pf_putstr(str);
 }
 
-static char	*ft_p_convert2str( unsigned long long num, char *base)
+static char	*ft_p_convert2str(unsigned long long num, char *base)
 {
-	int	len_s;
+	int					len_s;
 	unsigned long long	temp;
-	char	*str;
+	char				*str;
 
 	len_s = 0;
 	temp = num;
@@ -57,12 +57,12 @@ static char	*ft_p_convert2str( unsigned long long num, char *base)
 		num /= 16;
 	}
 	str[temp + 1] = '\0';
-	return(str);
+	return (str);
 }
 
 void	ft_solve_point(t_mix_tf *mix)
 {
-	char			*str;
+	char				*str;
 	unsigned long int	p;
 
 	p = va_arg(mix->vl, unsigned long int);
@@ -73,7 +73,7 @@ void	ft_solve_point(t_mix_tf *mix)
 		case_2(mix, str);
 	else if (mix->width > 0 && p != 0 && mix->m_flags[1] == 0)
 		case_3(mix, str);
-	else if ( p != 0)
+	else if (p != 0)
 	{
 		ft_pf_putstr("0x");
 		ft_pf_putstr(str);

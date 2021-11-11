@@ -57,5 +57,6 @@ char	*ft_pf_strncpy(char *dst, const char *src, size_t len)
 		dst[i] = src[i];
 	while (i < len)
 		dst[i++] = '\0';
+	dst[i] = '\0';
 	return (dst);
 }

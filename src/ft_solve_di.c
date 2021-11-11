@@ -3,7 +3,7 @@
 static char	*case_1(char *str, t_mix_tf *mix, int i)
 {
 	char	*tmp;
-	
+
 	if (mix->dimension > 0)
 	{
 		while (mix->dimension > ft_pf_strlen(str))
@@ -57,6 +57,8 @@ static void	case_4(char *str, t_mix_tf *mix, int i)
 {
 	if (i >= 0 && mix->m_flags[0] == 1)
 		ft_pf_putchr('+');
+	else if (i >= 0 && mix->m_flags[4] == 1)
+		ft_pf_putchr(' ');
 	else if (i < 0)
 		ft_pf_putchr('-');
 	ft_pf_putstr(str);
@@ -77,14 +79,16 @@ void	ft_solve_di(t_mix_tf *mix)
 	{
 		while (mix->width-- > 0)
 			ft_pf_putchr(' ');
-		free(str);
 	}
-	str = case_1(str, mix, i);
-	if (mix->width > 0 && mix->m_flags[1] == 1)
-		case_2(str, mix, i);
-	else if (mix->width > 0 && mix->m_flags[1] == 0)
-		case_3(str, mix, i);
 	else
-		case_4(str, mix, i);
+	{
+		str = case_1(str, mix, i);
+		if (mix->width > 0 && mix->m_flags[1] == 1)
+			case_2(str, mix, i);
+		else if (mix->width > 0 && mix->m_flags[1] == 0)
+			case_3(str, mix, i);
+		else
+			case_4(str, mix, i);
+	}
 	free(str);
 }

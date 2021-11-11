@@ -17,7 +17,7 @@ static	int	ft_chek_type(t_mix_tf *mix)
 static void	ft_porcess_mix(t_mix_tf *mix)
 {
 	int	type;
-	
+
 	type = ft_chek_type(mix);
 	if (type == 0)
 		ft_solve_char(mix);
@@ -56,15 +56,20 @@ static void	ft_get_param(t_mix_tf *mix, const char *src, size_t	start)
 	}
 }
 
+static size_t	ft_iniciation(t_mix_tf **mix)
+{
+	*mix = (t_mix_tf *)malloc(sizeof(t_mix_tf));
+	ft_cnt_print(0);
+	return (0);
+}
+
 int	ft_printf(const char *src, ...)
 {
 	size_t		pos_start;
 	t_mix_tf	*mix;
 
-	mix = (t_mix_tf *)malloc(sizeof(t_mix_tf));
+	pos_start = ft_iniciation(&mix);
 	va_start(mix->vl, src);
-	ft_cnt_print(0);
-	pos_start = 0;
 	while (src[pos_start])
 	{
 		ft_clean_mix(mix);

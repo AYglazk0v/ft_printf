@@ -37,7 +37,6 @@ void	ft_solve_str(t_mix_tf *mix)
 		str = ft_pf_create_str(mix->dimension);
 		str = ft_pf_strncpy(str, tmp, mix->dimension);
 	}
-	if (*str)
-		ft_solve_str_continue(mix, str);
+	ft_solve_str_continue(mix, str);
 	free(str);
 }

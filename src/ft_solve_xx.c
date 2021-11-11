@@ -19,12 +19,18 @@ static char	*case_1(char *str, t_mix_tf *mix, unsigned int x)
 			str = ft_pf_strjoin ("0", tmp);
 		}
 	}
+	mix->width -= ft_pf_strlen(str);
+	while (mix->m_flags[1] == 0 && mix->width-- > 0)
+		ft_pf_putchr(' ');
+	ft_pf_putstr(str);
+	while (mix->width-- > 0 && mix->m_flags[1] == 1)
+		ft_pf_putchr(' ');
 	return (str);
 }
 
 static void	case_2(char *str, t_mix_tf *mix, unsigned int x)
 {
-	if (mix->m_flags[2] == 1 && x !=0 && mix->m_types[6])
+	if (mix->m_flags[2] == 1 && x != 0 && mix->m_types[6])
 		ft_pf_putstr("0x");
 	if (mix->m_flags[2] == 1 && x != 0 && mix->m_types[7])
 		ft_pf_putstr("0X");
@@ -53,7 +59,15 @@ static void	case_3(char *str, t_mix_tf *mix, unsigned int x)
 		ft_pf_putstr("0X");
 	while (mix->width-- > 0 && mix->m_flags[3] == 1 && mix->dot == 0)
 		ft_pf_putchr('0');
+	ft_pf_putstr(str);
+}
 
+static void	case_4(char *str, t_mix_tf *mix, unsigned int x)
+{
+	if (mix->m_flags[2] == 1 && x != 0 && mix->m_types[6])
+		ft_pf_putstr("0x");
+	if (mix->m_flags[2] == 1 && x != 0 && mix->m_types[7])
+		ft_pf_putstr("0X");
 	ft_pf_putstr(str);
 }
 
@@ -71,15 +85,16 @@ void	ft_solve_xx(t_mix_tf *mix)
 	else
 		ft_convert2str(str, x, len_s, BASE16);
 	str[len_s + 1] = '\0';
-	if (mix->dimension > 0 && mix->dot == 1 && x == 0)
+	if (mix->dimension == 0 && mix->dot == 1 && x == 0)
 		while (mix->width-- > 0)
 			ft_pf_putchr(' ');
-	str = case_1(str, mix, x);
-	if (mix->width > 0 && mix->m_flags[1] == 1)
+	else if (mix->dimension > 0)
+		str = case_1(str, mix, x);
+	else if (mix->width > 0 && mix->m_flags[1] == 1)
 		case_2(str, mix, x);
 	else if (mix->width > 0 && mix->m_flags[1] == 0)
 		case_3(str, mix, x);
 	else
-		ft_pf_putstr(str);
+		case_4(str, mix, x);
 	free(str);
 }

@@ -23,6 +23,7 @@ typedef struct s_mix_tf
 }				t_mix_tf;
 
 int	ft_printf(const char *src, ...);
+
 //support_func.c 
 int		ft_pf_isdigit(char c);
 char	*ft_pf_create_str(size_t size);
@@ -34,7 +35,6 @@ char	*ft_pf_strncpy(char *dst, const char *src, size_t len);
 size_t	ft_invalid_status(t_mix_tf *mix, size_t pos_start, const char *src);
 void	ft_clean_mix(t_mix_tf *mix);
 int		ft_len_int_base(long long num, long long s_base);
-
 void	ft_convert2str(char *str, long long int num, int size, char *base);
 char	*ft_pf_strjoin(char *s1, char *s2);
 

@@ -6,7 +6,7 @@
 /*   By: gtaggana <gtaggana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 12:44:06 by gtaggana          #+#    #+#             */
-/*   Updated: 2021/11/16 12:44:07 by gtaggana         ###   ########.fr       */
+/*   Updated: 2021/11/16 13:43:58 by gtaggana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	ft_porcess_mix(t_mix_tf *mix)
 	else if (type == 2)
 		ft_solve_point(mix);
 	else if (type == 3 || type == 4)
-		ft_solve_di(mix);
+		ft_solve_di(mix, 0);
 	else if (type == 5)
 		ft_solve_u(mix);
 	else if (type == 6 || type == 7)

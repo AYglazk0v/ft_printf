@@ -6,7 +6,7 @@
 /*   By: gtaggana <gtaggana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 12:43:12 by gtaggana          #+#    #+#             */
-/*   Updated: 2021/11/16 12:51:13 by gtaggana         ###   ########.fr       */
+/*   Updated: 2021/11/16 13:44:31 by gtaggana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_solve_char(t_mix_tf *mix);
 void	ft_solve_str(t_mix_tf *mix);
 void	ft_solve_percent(t_mix_tf *mix);
 void	ft_solve_point(t_mix_tf *mix);
-void	ft_solve_di(t_mix_tf *mix);
+void	ft_solve_di(t_mix_tf *mix, int len_s);
 void	ft_solve_u(t_mix_tf *mix);
 void	ft_solve_xx(t_mix_tf *mix);
 

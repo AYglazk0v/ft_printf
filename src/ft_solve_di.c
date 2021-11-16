@@ -6,7 +6,7 @@
 /*   By: gtaggana <gtaggana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 12:43:34 by gtaggana          #+#    #+#             */
-/*   Updated: 2021/11/16 12:43:37 by gtaggana         ###   ########.fr       */
+/*   Updated: 2021/11/16 13:43:24 by gtaggana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,9 @@ static void	case_4(char *str, t_mix_tf *mix, int i)
 	ft_pf_putstr(str);
 }
 
-void	ft_solve_di(t_mix_tf *mix)
+void	ft_solve_di(t_mix_tf *mix, int len_s)
 {
 	int		i;
-	int		len_s;
 	char	*str;
 
 	i = va_arg(mix->vl, int);
@@ -94,7 +93,8 @@ void	ft_solve_di(t_mix_tf *mix)
 	}
 	else
 	{
-		str = case_1(str, mix, i);
+		if (mix->dimension > 0)
+			str = case_1(str, mix, i);
 		if (mix->width > 0 && mix->m_flags[1] == 1)
 			case_2(str, mix, i);
 		else if (mix->width > 0 && mix->m_flags[1] == 0)

@@ -12,7 +12,7 @@ SRC_NAME	=	./src/ft_puts.c \
 				./src/support_func_continue.c
 
 SRC_BONUS	=	${SRC_NAME}
-
+LIB_NAME	=	./inc/ft_printf.h
 OBJ_NAME	=	${SRC_NAME:.c=.o}
 OBJ_BONUS	=	${SRC_BONUS:.c=.o}
 CFLAGS		=	-Wall -Wextra -Werror
@@ -22,17 +22,17 @@ RM			= 	rm -f
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-$(NAME): ${OBJ_NAME}
+$(NAME): ${OBJ_NAME} ${LIB_NAME}
 				ar rcs ${NAME} ${OBJ_NAME}
 
-bonus:	${OBJ_NAME} ${OBJ_BONUS}	
+bonus:	${OBJ_NAME} ${OBJ_BONUS	${LIB_NAME}
 				ar rcs ${NAME} ${OBJ_NAME} ${OBJ_BONUS}
 
 .PHONY: dance suicide step step2 step3 step4 step5 step6 step7 dance all clean fclean re bonus
 
-all:	${NAME}
+all:	${NAME} ${LIB_NAME}
 
-clean:
+clean:	${LIB_NAME}
 				${RM} ${OBJ_NAME} ${OBJ_BONUS}
 
 fclean:	clean	

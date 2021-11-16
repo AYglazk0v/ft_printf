@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gtaggana <gtaggana@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/16 12:43:12 by gtaggana          #+#    #+#             */
+/*   Updated: 2021/11/16 12:46:25 by gtaggana         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # define BASE10 "0123456789"
@@ -22,9 +34,10 @@ typedef struct s_mix_tf
 	int		dimension;
 }				t_mix_tf;
 
-int	ft_printf(const char *src, ...);
+int		ft_printf(const char *src, ...);
 
 //support_func.c 
+
 int		ft_pf_isdigit(char c);
 char	*ft_pf_create_str(size_t size);
 int		ft_pf_strlen(const char	*s);
